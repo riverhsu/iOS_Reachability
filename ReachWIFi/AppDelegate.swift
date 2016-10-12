@@ -6,18 +6,57 @@
 //  Copyright © 2016年 Sgmedical. All rights reserved.
 //
 
-import UIKit
+import UIKit;
+
+let REACHABLEWITHWIFI = "ReachablewithWIFI"
+let NOTREACHABLE = "NotReachable"
+let REACHABLEWITHWWAN = "ReachablewithWWAN"  //3G, 4G
+
+var reachability: Reachability?
+var reachabilityStatus =  REACHABLEWITHWIFI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var internetReach: Reachability?
+    var yahooReach: Reachability?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+    
+        // internetReach = Reachability.forInternetConnection()
+        yahooReach = Reachability.init(hostName: "www.yahoo.com")
+    
+        
+        /*
+        internetReach?.startNotifier()
+        if internetReach != nil {
+            self.statusChangedWithReachability(currentReachabilityStatus: internetReach!)
+            print("-------------------------------------------------------")
+        }
+        */
+        
+        yahooReach?.startNotifier()
+        if yahooReach != nil {
+            print("Link to Yahoo: ")
+            self.statusChangedWithReachability(currentReachabilityStatus: yahooReach!)
+            print("--------------------------------------------------------")
+            print(yahooReach?.description)
+            print("--------------------------------------------------------")
+        }
+
+        
         return true
     }
+    
+    func statusChangedWithReachability(currentReachabilityStatus: Reachability){
+        let networkStatus: NetworkStatus = currentReachabilityStatus.currentReachabilityStatus()
+        //var statusString: String = ""
+        print("StatusValue: \(networkStatus.rawValue)")        
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -40,7 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
 }
 

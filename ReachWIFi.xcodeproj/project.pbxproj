@@ -12,6 +12,7 @@
 		4B4691221DA7745600C84A23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4691201DA7745600C84A23 /* Main.storyboard */; };
 		4B4691241DA7745600C84A23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4691231DA7745600C84A23 /* Assets.xcassets */; };
 		4B4691271DA7745600C84A23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4691251DA7745600C84A23 /* LaunchScreen.storyboard */; };
+		4B4691311DA776E100C84A23 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B4691301DA776E100C84A23 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		4B4691231DA7745600C84A23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B4691261DA7745600C84A23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B4691281DA7745600C84A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B46912E1DA776E100C84A23 /* ReachWIFi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReachWIFi-Bridging-Header.h"; sourceTree = "<group>"; };
+		4B46912F1DA776E100C84A23 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		4B4691301DA776E100C84A23 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +43,10 @@
 			isa = PBXGroup;
 			children = (
 				4B46911B1DA7745600C84A23 /* ReachWIFi */,
+				4B46912F1DA776E100C84A23 /* Reachability.h */,
+				4B4691301DA776E100C84A23 /* Reachability.m */,
 				4B46911A1DA7745600C84A23 /* Products */,
+				4B46912E1DA776E100C84A23 /* ReachWIFi-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +104,7 @@
 					4B4691181DA7745600C84A23 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = WTE562C6VP;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B46911F1DA7745600C84A23 /* ViewController.swift in Sources */,
+				4B4691311DA776E100C84A23 /* Reachability.m in Sources */,
 				4B46911D1DA7745600C84A23 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,11 +268,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = WTE562C6VP;
 				INFOPLIST_FILE = ReachWIFi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sgmedical.ReachWIFi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ReachWIFi-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -272,11 +284,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = WTE562C6VP;
 				INFOPLIST_FILE = ReachWIFi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sgmedical.ReachWIFi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ReachWIFi-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
